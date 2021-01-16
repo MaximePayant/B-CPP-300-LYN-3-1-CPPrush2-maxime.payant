@@ -13,7 +13,7 @@
 class Teddy : public Toy
 {
     public:
-        Teddy();
+        Teddy(std::string const &name);
         ~Teddy();
 
         void isTaken() const override;
