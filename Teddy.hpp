@@ -8,14 +8,14 @@
 #ifndef TEDDY_HPP_
 #define TEDDY_HPP_
 #include "Toy.hpp"
+#include <iostream>
 
 class Teddy : Toy {
     public:
         Teddy();
         ~Teddy();
-
+        void isTaken();
     protected:
-    private:
 };
 
 #endif /* !TEDDY_HPP_ */
