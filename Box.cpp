@@ -22,6 +22,7 @@ bool Box::wrapMeThat(Object *gift)
     if (this->_is_open == false || this->_is_gift != false)
         return (false);
     this->_gift = gift;
+    this->_is_open = false;
     this->_is_gift = true;
     return (true);
 }
