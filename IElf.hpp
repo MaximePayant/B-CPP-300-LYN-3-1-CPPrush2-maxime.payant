@@ -32,8 +32,8 @@ class IElf
         virtual bool pressInButton() = 0;
         virtual bool pressOutButton() = 0;
         virtual const std::string *lookAtTable() = 0;
-        virtual const void assignTable(PapaXmasTable* table) = 0;
-        virtual const void assignConveyor(PapaXmasConveyorBelt *conveyor) = 0;
+        virtual void assignTable(PapaXmasTable* table) = 0;
+        virtual void assignConveyor(PapaXmasConveyorBelt *conveyor) = 0;
 
 };
 

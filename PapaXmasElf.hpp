@@ -130,14 +130,18 @@ class PapaXmasElf :
         ///
         /// @param table table to be assign
         //
-        const void assignTable(PapaXmasTable* table) override;
+        void assignTable(PapaXmasTable* table) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Assign the given conveyor to the elf
         ///
         /// @param conveyor conveyor to be assign
         //
-        const void assignConveyor(PapaXmasConveyorBelt *conveyor) override;
+        void assignConveyor(PapaXmasConveyorBelt *conveyor) override;
+
+        void dispObject() const;
+
+        friend bool unit_test();
 
 };
 

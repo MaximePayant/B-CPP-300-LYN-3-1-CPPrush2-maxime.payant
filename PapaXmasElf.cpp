@@ -12,7 +12,8 @@ PapaXmasElf::PapaXmasElf(const std::string& name
                         , PapaXmasConveyorBelt *conveyor) :
 m_name(name),
 m_table(table),
-m_conveyor(conveyor)
+m_conveyor(conveyor),
+m_object(nullptr)
 {
     speach::disp(SP_ELF_CREATE(m_name));
 }
@@ -27,7 +28,7 @@ bool PapaXmasElf::wrapObject(Wrap *wrap)
     speach::disp("tuuuut tuuut tuut");
     if (!wrap)
         return (speach::error(SP_WRAP_NOEXIST), false);
-    if (!m_object);
+    if (!m_object)
         return (speach::error(SP_OBJ_NOEXIST), false);
     if (!wrap->wrapMeThat(m_object))
         return (false);
@@ -123,12 +124,23 @@ const std::string* PapaXmasElf::lookAtTable()
     return (m_table->lookatTable());
 }
 
-const void PapaXmasElf::assignTable(PapaXmasTable* table)
+void PapaXmasElf::assignTable(PapaXmasTable* table)
 {
     m_table = table;
 }
 
-const void PapaXmasElf::assignConveyor(PapaXmasConveyorBelt *conveyor)
+void PapaXmasElf::assignConveyor(PapaXmasConveyorBelt *conveyor)
 {
     m_conveyor = conveyor;
+}
+
+void PapaXmasElf::dispObject() const
+{
+    std::cout
+        << m_name
+        << " is carrying a "
+        << m_object->getType()
+        << " named "
+        << m_object->getName()
+        << std::endl;
 }
