@@ -10,15 +10,25 @@
 void ConveyorBeltRand::myrand(int r)
 {
     if (r == 0)
-        _wrap = new Box("MyBOX");
-    else
         _wrap = new GiftPaper("MyGiftPaper");
+    else
+        _wrap = new Box("MyBox");
 }
 
-ConveyorBeltRand::ConveyorBeltRand() : PapaXmasConveyorBelt()
+ConveyorBeltRand::ConveyorBeltRand(std::string filename) : PapaXmasConveyorBelt()
 {
-    int r = rand() % 4;
+    int r = rand() % 2;
+    std::ofstream myfile;
     myrand(r);
+    myfile.open(filename);
+    if (r == 0)
+        myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
+<< "Maugan" << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
+    else {
+        myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<LittlePony>"
+<< "Maximel" << "</LittlePony>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
+    }
+    myfile.close();
 }
 
 ConveyorBeltRand::~ConveyorBeltRand()

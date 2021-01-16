@@ -13,11 +13,13 @@
 #include "Teddy.hpp"
 #include "Box.hpp"
 #include "GiftPaper.hpp"
+#include <fstream>
+
 
 class ConveyorBeltRand : public PapaXmasConveyorBelt
 {
     public:
-        ConveyorBeltRand();
+        ConveyorBeltRand(std::string filename);
         ~ConveyorBeltRand();
         void myrand(int r);
 };
