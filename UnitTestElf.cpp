@@ -13,6 +13,7 @@
 #include "Box.hpp"
 #include "GiftPaper.hpp"
 
+/*
 bool object_on_table()
 {
     std::cout << "ELF PLAY WITH TABLE ====" << std::endl;
@@ -86,12 +87,23 @@ bool unit_test()
     std::cout << "========================" << std::endl << std::endl;
     return (true);
 }
+*/
 
 int main(void)
 {
-    if (!unit_test())
-        std::cout << "Aannd you fail !" << std::endl;
-    else
-        std::cout << "Your elf is so cool" << std::endl;
+    //if (!unit_test())
+    //    std::cout << "Aannd you fail !" << std::endl;
+    //else
+    //    std::cout << "Your elf is so cool" << std::endl;
+
+    srand(time(NULL));
+
+    TableRand table = TableRand();
+    ConveyorBeltRand conveyor = ConveyorBeltRand("Gift.xml");
+    PapaXmasElf elf("Patrick");
+
+    elf.assignTable(&table);
+    elf.assignConveyor(&conveyor);
+    elf.itsTimeToWork();
     return (0);
 }

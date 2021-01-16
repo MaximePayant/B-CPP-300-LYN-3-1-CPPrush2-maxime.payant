@@ -46,8 +46,8 @@ bool PapaXmasConveyorBelt::OUT()
     myfile.open("gift.xml");
     if (mybox->accessGift()->getType() == "Teddy")
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
-<< "Maugan" << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
-    else if (mybox->accessGift()->getType() == "pony") {
+<< mybox->accessGift()->getName() << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
+    else if (mybox->accessGift()->getType() == "pony"){
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<LittlePony>"
 << mybox->accessGift()->getName() << "</LittlePony>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
     }
@@ -75,7 +75,10 @@ bool PapaXmasConveyorBelt::putObject(Object *object)
 
 Object *PapaXmasConveyorBelt::takeObject()
 {
-    return (_wrap);
+    Object *tmp = _wrap;
+
+    _wrap = nullptr;
+    return (tmp);
 }
 
 IConveyorBelt *createConveyorBelt()

@@ -26,7 +26,7 @@ TableRand::TableRand()
 
 TableRand::~TableRand()
 {
-    for (size_t i = 0; i < 10; i++)
-        if (_table[i])
-            delete _table[i];
+    //for (size_t i = 0; i < 10; i++)
+    //    if (_table[i])
+    //        delete _table[i];
 }

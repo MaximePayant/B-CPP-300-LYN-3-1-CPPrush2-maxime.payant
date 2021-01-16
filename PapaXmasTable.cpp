@@ -46,7 +46,7 @@ Object *PapaXmasTable::takeObject(int pos)
         _table[pos] = nullptr;
         return tmp;
     }
-    std::cerr << "Not find this object... So saaad" << std::endl;
+    //std::cerr << "Not find this object... So saaad" << std::endl;
     return nullptr;
 }
 
