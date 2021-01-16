@@ -30,8 +30,12 @@ bool PapaXmasTable::putObject(Object *object)
             return (true);
         }
     }
-  std::cerr << "No place on the Table... so saaad" << std::endl;
-  return false;
+    for (size_t i = 0; i < 10; i++) {
+        delete _table[i];
+        _table[i] = nullptr;
+    }
+    std::cerr << "No place on the Table... so saaad... Boom it collapses" << std::endl;
+    return false;
 }
 
 Object *PapaXmasTable::takeObject(int pos)
