@@ -31,7 +31,7 @@ Wrap *PapaXmasConveyorBelt::IN()
     if (i == 0)
         _wrap = new GiftPaper("MyGIFTPAPER", "GiftPaper");
     else
-        _wrap = new Box("MyBOX", "Box");
+        _wrap = new Box("MyBOX");
     return (_wrap);
 }
 
@@ -56,7 +56,7 @@ bool PapaXmasConveyorBelt::lookatTable()
 
 bool PapaXmasConveyorBelt::putObject(Object *object)
 {
-    Box *box = new Box("Box", "");
+    Box *box = new Box("Box");
     if (lookatTable() == false) {
         box->openMe();
         box->wrapMeThat(object);
