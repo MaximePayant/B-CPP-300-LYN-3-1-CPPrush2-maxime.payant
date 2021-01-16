@@ -22,15 +22,48 @@ class ITable
 
 class PapaXmasTable : public ITable
 {
-    public:
-        PapaXmasTable();
-        ~PapaXmasTable();
-        Object *takeObject(int position);
-        bool putObject(Object *object);
-        const std::string *lookatTable();
-
     protected:
         Object *_table[10];
+
+    public:
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Create a Table (Object *)
+    ///
+    /// @p @warning R.A.S mann
+    //
+    PapaXmasTable();
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Destruct a Wrap
+    ///
+    /// @p @warning Attention to the invalid free
+    //
+    ~PapaXmasTable();
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief elves put an Object on the Table
+    ///
+    /// @p @warning R.A.S
+    /// @return false if there is no place, true otherwise
+    //
+    bool putObject(Object *object) override;
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief elves take an Object on the ConveyorBelt
+    ///
+    /// @p @warning Nothing to say
+    /// @return A pointer to the the Object who is on the Table at position pos
+    //
+    Object *takeObject(int pos) override;
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief elves look for Objects on the Table
+    ///
+    /// @p @warning Nothing to say
+    /// @return an array of the titles of the various Objects. The last element in the array is null
+    //
+    const std::string *lookatTable() override;
 };
 
 ITable *createTable();

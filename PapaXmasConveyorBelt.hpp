@@ -28,18 +28,64 @@ class IConveyorBelt
 
 class PapaXmasConveyorBelt : public IConveyorBelt
 {
-    public:
-        PapaXmasConveyorBelt();
-        ~PapaXmasConveyorBelt();
-
-        Wrap *IN();
-        bool OUT();
-        bool putObject(Object *object) override;
-        Object *takeObject() override;
-        bool lookatTable() override;
-
     protected:
         Wrap *_wrap;
+
+    public:
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Create a Wrap
+        ///
+        /// @p @warning R.A.S mann
+        //
+        PapaXmasConveyorBelt();
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief Destruct a Wrap
+        ///
+        /// @p @warning Attention to the invalid free
+        //
+        ~PapaXmasConveyorBelt();
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief elves receive Wraps by pressing the “IN” button of the ConveyorBelt
+        ///
+        /// @p @warning Attention check if something is already on the ConveyorBelt
+        /// @return A pointer to the Wrap
+        //
+        Wrap *IN();
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief elves send what’s on the ConveyorBelt to Santa by pressing its OUT button
+        ///
+        /// @p @warning Attention check if something is already on the ConveyorBelt and can be send to Santa
+        /// @return false if nothing is on the ConveyorBelt, true otherwise
+        //
+        bool OUT();
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief elves put an Object on the ConveyorBelt
+        ///
+        /// @p @warning Attention check if something is already on the ConveyorBelt
+        /// @return false if something is already on the ConveyorBelt, true otherwise
+        //
+        bool putObject(Object *object) override;
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief elves take an Object on the ConveyorBelt
+        ///
+        /// @p @warning Nothing to say
+        /// @return A pointer to the the Object who is on the ConveyorBelt
+        //
+        Object *takeObject() override;
+
+        ///////////////////////////////////////////////////////////////////////
+        /// @brief elves look for an Object on the ConveyorBelt
+        ///
+        /// @p @warning Nothing to say
+        /// @return false if the nothing is on ConveyorBelt, true otherwise
+        //
+        bool lookatTable() override;
 };
 
 IConveyorBelt *createConveyorBelt();
