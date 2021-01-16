@@ -14,9 +14,9 @@ void TableRand::myrand(int i, int r)
     else if (r == 1)
         _table[i] = new LittlePony("LittlePony");
     else if (r == 2)
-        _table[i] = new Box("MyBOX", "Box");
+        _table[i] = new Box("MyBOX");
     else
-        _table[i] = new GiftPaper("MyGiftPaper", "GiftPaper");
+        _table[i] = new GiftPaper("MyGiftPaper");
 }
 
 TableRand::TableRand()

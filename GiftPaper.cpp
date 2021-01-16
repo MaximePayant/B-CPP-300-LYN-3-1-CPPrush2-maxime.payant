@@ -7,10 +7,9 @@
 
 #include "GiftPaper.hpp"
 
-GiftPaper::GiftPaper(const std::string &name, const std::string &type) : Wrap(name, type)
+GiftPaper::GiftPaper(const std::string &name) : Wrap(name, "GiftPaper")
 {
     this->_name = name;
-    this->_type = type;
 }
 
 GiftPaper::~GiftPaper()

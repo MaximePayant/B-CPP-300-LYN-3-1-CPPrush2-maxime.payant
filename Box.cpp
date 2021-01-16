@@ -7,7 +7,7 @@
 
 #include "Box.hpp"
 
-Box::Box(const std::string &name) : Wrap(name, "box")
+Box::Box(const std::string &name) : Wrap(name, "Box")
 {
     this->_name = name;
 }

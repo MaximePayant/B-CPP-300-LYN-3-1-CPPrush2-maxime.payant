@@ -11,7 +11,6 @@
 
 class Wrap : public Object {
     public:
-        Wrap(const std::string &name = "", const std::string &type = "Wrap");
         virtual ~Wrap();
         virtual bool wrapMeThat(Object *gift);
         Object *openMe();
@@ -20,6 +19,7 @@ class Wrap : public Object {
         Object *accessGift() const;
 
     protected:
+        Wrap(const std::string &name = "");
         bool _is_open;
         bool _is_gift;
         Object *_gift;

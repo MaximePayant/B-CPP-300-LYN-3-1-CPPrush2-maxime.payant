@@ -10,9 +10,9 @@
 void ConveyorBeltRand::myrand(int r)
 {
     if (r == 0)
-        _wrap = new Box("MyBOX", "Box");
+        _wrap = new Box("MyBOX");
     else
-        _wrap = new GiftPaper("MyGiftPaper", "GiftPaper");
+        _wrap = new GiftPaper("MyGiftPaper");
 }
 
 ConveyorBeltRand::ConveyorBeltRand() : PapaXmasConveyorBelt()
