@@ -25,6 +25,7 @@ class PapaXmasElf :
         std::string m_name;
         PapaXmasTable *m_table;
         PapaXmasConveyorBelt *m_conveyor;
+        Object *m_object;
 
     public:
         PapaXmasElf() = delete;
@@ -49,22 +50,21 @@ class PapaXmasElf :
         ~PapaXmasElf();
 
         ///////////////////////////////////////////////////////////////////////
-        /// @brief Wrap the given @p object with the given @p wrap
+        /// @brief Wrap the elf's object with the given @p wrap
         ///
         /// @param wrap The @p Wrap call to wrap the @p Object
-        /// @param obj The @p Object to wrap
         /// @return true if the object was wrap, false otherwise
         //
-        bool wrapObject(Wrap *wrap, Object *obj) override;
+        bool wrapObject(Wrap *wrap) override;
 
         ///////////////////////////////////////////////////////////////////////
-        /// @brief Open the given @p Wrap
+        /// @brief Open the given @p Wrap and take the object in
         /// @warning Does nothing if it isn't a @p Box
         ///
         /// @param wrap The @p Wrap to open
-        /// @return The @p Object in the given wrap, null if there is nothing
+        /// @return true if the wrap was open, false otherwise
         //
-        Object *openWrap(Wrap *wrap) override;
+        bool openWrap(Wrap *wrap) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Close the given @p Wrap
@@ -76,35 +76,33 @@ class PapaXmasElf :
         bool closeWrap(Wrap *wrap) override;
 
         ///////////////////////////////////////////////////////////////////////
-        /// @brief Take the @p Object at the given index on the elf's table
+        /// @brief Take the object at the given index on the elf's table
         ///
         /// @param index The index to access
-        /// @return The @p Object on the elf's table at the given index
+        /// @return true if the object was take, else otherwise
         //
-        Object *takeOnTable(int index) override;
+        bool takeOnTable(int index) override;
 
         ///////////////////////////////////////////////////////////////////////
-        /// @brief Take the @p Object on the elf's conveyor
+        /// @brief Take the object on the elf's conveyor
         ///
-        /// @return The @p Object on the elf's conveyor
+        /// @return true if the object was take, else otherwise
         //
-        Object *takeOnConveyor() override;
+        bool takeOnConveyor() override;
 
         ///////////////////////////////////////////////////////////////////////
-        /// @brief Put the given @p Object on the elf's table
+        /// @brief Put elf's object on the elf's table
         ///
-        /// @param obj The object to be put
         /// @return true if the object was put, false otherwise
         //
-        bool putOnTable(Object *obj) override;
+        bool putOnTable() override;
 
         ///////////////////////////////////////////////////////////////////////
-        /// @brief Put the given object on the elf's conveyor
+        /// @brief Put the elf's object on the elf's conveyor
         ///
-        /// @param obj The object to be put
         /// @return true if the object was put, false otherwise
         //
-        bool putOnConveyor(Object *obj) override;
+        bool putOnConveyor() override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Put an object on the elf's conveyor

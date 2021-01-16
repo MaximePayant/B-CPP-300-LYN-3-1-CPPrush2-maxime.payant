@@ -21,15 +21,14 @@ class IElf
 
     public:
         virtual ~IElf() {};
-        virtual Object *takeObject(Object *obj) = 0;
 
-        virtual bool wrapObject(Wrap *wrap, Object *obj) = 0;
-        virtual Object *openWrap(Wrap *wrap) = 0;
+        virtual bool wrapObject(Wrap *wrap) = 0;
+        virtual bool openWrap(Wrap *wrap) = 0;
         virtual bool closeWrap(Wrap *wrap) = 0;
-        virtual Object *takeOnTable(int index) = 0;
-        virtual Object *takeOnConveyor() = 0;
-        virtual bool putOnTable(Object *obj) = 0;
-        virtual bool putOnConveyor(Object *obj) = 0;
+        virtual bool takeOnTable(int index) = 0;
+        virtual bool takeOnConveyor() = 0;
+        virtual bool putOnTable() = 0;
+        virtual bool putOnConveyor() = 0;
         virtual bool pressInButton() = 0;
         virtual bool pressOutButton() = 0;
         virtual const std::string *lookAtTable() = 0;
