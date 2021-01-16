@@ -28,7 +28,7 @@ std::string extraction(char const *file, std::string &name)
     std::regex rgx("^<(Gift)><(\\1Paper)><(Box)><(Teddy|LittlePony)>(.*)</\\4></\\3></\\2></\\1>$");
     std::smatch match;
 
-    getline(current, line);
+    std::getline(current, line);
     std::regex_search(line, match, rgx);
     current.close();
     if (match.size() > 0) {
