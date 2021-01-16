@@ -11,7 +11,7 @@
 
 class Wrap : public Object {
     public:
-        Wrap(const std::string &name, const std::string &type);
+        Wrap(const std::string &name = "", const std::string &type = "Wrap");
         virtual ~Wrap();
         virtual void wrapMeThat(Object *gift);
         Object *openMe();
