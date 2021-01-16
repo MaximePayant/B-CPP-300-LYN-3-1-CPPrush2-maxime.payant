@@ -10,8 +10,8 @@
 
 Wrap::Wrap()
 {
-    this->_is_gift = 0;
-    this->_is_open = 0;
+    this->_is_gift = false;
+    this->_is_open = false;
     this->_gift = nullptr;
 }
 
@@ -21,29 +21,23 @@ Wrap::~Wrap()
 
 void Wrap::wrapMeThat(Object *gift)
 {
-    if (this->_is_gift != 0)
+    if (this->_is_gift != false)
         return;
     this->_gift = gift;
-    this->_is_gift = 1;
+    this->_is_gift = true;
 }
 
-Object *Wrap::openMe()
+void Wrap::openMe() const
 {
-    Object *tmp = this->_gift;
-
-    if (this->_is_gift == 0)
-        return nullptr;
-    this->_is_open = 1;
-    this->_is_gift = 0;
-    return tmp;
+    this->_is_open = true;
 }
 
 void Wrap::closeMe()
 {
-    this->_is_open = 0;
+    this->_is_open = false;
 }
 
-int Wrap::isOpen() const
+bool Wrap::isOpen() const
 {
     return this->_is_open;
 }

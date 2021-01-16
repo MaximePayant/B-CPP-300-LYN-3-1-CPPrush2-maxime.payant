@@ -14,13 +14,13 @@ class Wrap {
         Wrap();
         virtual ~Wrap();
         virtual void wrapMeThat(Object *gift);
-        Object *openMe();
+        void openMe();
         void closeMe();
-        int isOpen() const;
+        bool isOpen() const;
 
     protected:
-        int _is_open;
-        int _is_gift;
+        bool _is_open;
+        bool _is_gift;
         Object *_gift;
 };
 
