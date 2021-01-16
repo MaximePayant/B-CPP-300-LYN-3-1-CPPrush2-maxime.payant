@@ -15,7 +15,7 @@ class Object
 {
     public:
         Object(const std::string &name, const std::string &type);
-        ~Object();
+        virtual ~Object();
         std::string getName();
         std::string getType();
 
