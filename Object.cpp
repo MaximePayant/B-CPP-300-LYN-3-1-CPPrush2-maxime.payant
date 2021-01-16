@@ -7,8 +7,10 @@
 
 #include "Object.hpp"
 
-Object::Object()
+Object::Object(const std::string &name, const std::string &type)
 {
+    this->_name = name;
+    this->_type = type;
 }
 
 Object::~Object()

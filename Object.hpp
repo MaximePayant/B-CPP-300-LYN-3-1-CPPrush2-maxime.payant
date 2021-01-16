@@ -7,12 +7,17 @@
 
 #ifndef OBJECT_HPP_
 #define OBJECT_HPP_
+#include <string>
 
 class Object
 {
     public:
-        Object();
+        Object(const std::string &name, const std::string &type);
         ~Object();
+
+    private:
+        std::string _name;
+        std::string _type;
 };
 
 #endif /* !OBJECT_HPP_ */
