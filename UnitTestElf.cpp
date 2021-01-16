@@ -17,10 +17,10 @@ bool object_on_table()
 {
     std::cout << "ELF PLAY WITH TABLE ====" << std::endl;
     PapaXmasTable table;
-    Object pony = LittlePony("Little Pony");
+    Object *pony = new LittlePony("Little Pony");
     PapaXmasElf elf("Patrick");
 
-    table.putObject(&pony);
+    table.putObject(pony);
     elf.assignTable(&table);
     elf.takeOnTable(LEFT, 0);
     elf.dispObject();
@@ -46,6 +46,36 @@ bool take_object_on_convoyer()
     return (true);
 }
 
+bool make_perfect_gift()
+{
+    std::cout << "ELF MAKE PERFECT GIFT ===" << std::endl;
+    PapaXmasTable table;
+    PapaXmasConveyorBelt conveyor;
+    PapaXmasElf elf("Patrick");
+    Object *box = new Box("Carton");
+    Object *giftPaper = new GiftPaper("Papier vert");
+    Object *pony = new LittlePony("Little Pony");
+
+    table.putObject(box);
+    table.putObject(giftPaper);
+    table.putObject(pony);
+    elf.assignTable(&table);
+    elf.assignConveyor(&conveyor);
+    elf.takeOnTable(LEFT, 0);
+    elf.takeOnTable(RIGHT, 2);
+    elf.dispObject();
+    elf.openWrap(LEFT);
+    elf.wrapObject(RIGHT);
+    elf.dispObject();
+    elf.takeOnTable(RIGHT, 1);
+    elf.dispObject();
+    elf.wrapObject(LEFT);
+    elf.dispObject();
+    elf.putOnConveyor(RIGHT);
+    elf.pressOutButton();
+    return (true);
+}
+
 bool unit_test()
 {
     //PapaXmasConveyorBelt *conveyor = new PapaXmasConveyorBelt();
@@ -61,6 +91,8 @@ bool unit_test()
     object_on_table();
     std::cout << "========================" << std::endl << std::endl;
     take_object_on_convoyer();
+    std::cout << "========================" << std::endl << std::endl;
+    make_perfect_gift();
     std::cout << "========================" << std::endl << std::endl;
     return (true);
 }

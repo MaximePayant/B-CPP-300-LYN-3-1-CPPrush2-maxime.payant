@@ -54,7 +54,14 @@ bool PapaXmasElf::openWrap(Hand hand)
     if (!m_object[hand] || m_object[hand]->getAttribut() != "Wrap")
         return (speach::error("Open a ... Toy ?"), false);
 
-    m_object[otherHand] = ((Wrap *)m_object[hand])->openMe();
+    Object *tmp = ((Wrap *)m_object[hand])->openMe();
+
+    if (tmp && m_object[otherHand]) {
+        ((Wrap *)m_object[hand])->wrapMeThat(tmp);
+        speach::error("You can't hold the object");
+        return (false);
+    }
+
     speach::disp(SP_ELF_OPEN(m_name, m_object[hand]->getName()));
     return (true);
 }
