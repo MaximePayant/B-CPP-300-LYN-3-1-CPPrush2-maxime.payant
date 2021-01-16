@@ -11,15 +11,16 @@ ITable::~ITable() {}
 
 PapaXmasTable::PapaXmasTable()
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++) {
         _table[i] = nullptr;
+    }
 }
 
 PapaXmasTable::~PapaXmasTable()
 {
     for (int i = 0; i < 10; i++)
-        if (_table[i])
-          delete _table[i];
+	    if (_table[i] != nullptr)
+    		delete _table[i];
 }
 
 bool PapaXmasTable::putObject(Object *object)
