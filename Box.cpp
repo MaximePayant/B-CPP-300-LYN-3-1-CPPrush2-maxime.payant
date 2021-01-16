@@ -9,9 +9,7 @@
 
 Box::Box(const std::string &name) :
 Wrap(name, "Box")
-{
-    this->_name = name;
-}
+{}
 
 Box::~Box()
 {
