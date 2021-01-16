@@ -15,8 +15,6 @@ class Box : public Wrap {
         virtual ~Box();
         bool wrapMeThat(Object *gift) override;
 
-    protected:
-
 };
 
 #endif /* !BOX_HPP_ */

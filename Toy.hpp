@@ -11,8 +11,10 @@
 
 class Toy : public Object
 {
-    public:
+    protected:
         Toy(std::string const &name, std::string const &type);
+
+    public:
         ~Toy();
 
         virtual void isTaken() const = 0;

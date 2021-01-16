@@ -13,7 +13,6 @@ class GiftPaper : public Wrap {
     public:
         GiftPaper(const std::string &name = "Gift Paper");
         virtual ~GiftPaper();
-    protected:
 
 };
 

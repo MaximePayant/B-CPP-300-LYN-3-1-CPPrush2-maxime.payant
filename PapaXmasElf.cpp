@@ -42,6 +42,7 @@ bool PapaXmasElf::openWrap(Wrap *wrap)
         return (speach::error(SP_ELF_HAD_OBJ(m_name)), false);
     if (!wrap)
         return (speach::error(SP_WRAP_NOEXIST), false);
+    speach::disp("");
     m_object = wrap->openMe();
     return (true);
 }
