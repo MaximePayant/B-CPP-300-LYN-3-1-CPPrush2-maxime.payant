@@ -37,7 +37,7 @@ bool PapaXmasTable::putObject(Object *object)
 Object *PapaXmasTable::takeObject(int pos)
 {
     if (_table[pos] != nullptr) {
-        Object* tmp = _table[pos];
+        Object *tmp = _table[pos];
         _table[pos] = nullptr;
         return tmp;
     }
