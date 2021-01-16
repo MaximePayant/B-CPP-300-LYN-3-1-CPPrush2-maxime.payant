@@ -19,7 +19,7 @@ class Object
         std::string getName();
         std::string getType();
 
-    private:
+    protected:
         std::string _name;
         std::string _type;
 };

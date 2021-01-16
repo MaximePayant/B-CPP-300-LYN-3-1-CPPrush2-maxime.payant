@@ -11,7 +11,7 @@
 
 class Box : public Wrap {
     public:
-        Box();
+        Box(const std::string &name = "", const std::string &type = "Box");
         virtual ~Box();
         bool wrapMeThat(Object *gift) override;
 

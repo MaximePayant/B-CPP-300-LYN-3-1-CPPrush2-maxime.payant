@@ -11,7 +11,7 @@
 
 class GiftPaper : public Wrap {
     public:
-        GiftPaper();
+        GiftPaper(const std::string &name = "", const std::string &type = "GiftPaper");
         virtual ~GiftPaper();
     protected:
 
