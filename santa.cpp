@@ -56,6 +56,7 @@ std::vector<GiftPaper *> getGiftFromXml(int ac, char **av)
     return gifts;
 }
 
+/*
 int main(int ac, char **av)
 {
     std::vector<GiftPaper *> gifts;
@@ -67,3 +68,4 @@ int main(int ac, char **av)
         std::cout << ((Wrap *)((Wrap *)((Wrap *)gifts[i])->accessGift())->accessGift())->getType() << " " << ((Wrap *)((Wrap *)((Wrap *)gifts[i])->accessGift())->accessGift())->getName() << std::endl;
     return 0;
 }
+*/

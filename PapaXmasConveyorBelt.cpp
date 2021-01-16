@@ -47,7 +47,7 @@ bool PapaXmasConveyorBelt::OUT()
     if (mybox->accessGift()->getType() == "Teddy")
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
 << "Maugan" << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
-    else if (mybox->accessGift()->getType() == "Little Pony") {
+    else if (mybox->accessGift()->getType() == "pony") {
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<LittlePony>"
 << mybox->accessGift()->getName() << "</LittlePony>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
     }

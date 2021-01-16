@@ -78,16 +78,6 @@ bool make_perfect_gift()
 
 bool unit_test()
 {
-    //PapaXmasConveyorBelt *conveyor = new PapaXmasConveyorBelt();
-    //PapaXmasTable *table = new PapaXmasTable();
-    //PapaXmasElf elf("Patrick");
-    //Object *pony = new LittlePony("Little Pony");
-    //Object *teddy = new Teddy("Teddy Bear");
-    //Object *box1 = new Box("Carton");
-    //Object *box2 = new Box("Boite");
-    //Object *giftPaper1 = new GiftPaper("Papier vert");
-    //Object *giftPaper2 = new GiftPaper("Papier bleu");
-
     object_on_table();
     std::cout << "========================" << std::endl << std::endl;
     take_object_on_convoyer();
