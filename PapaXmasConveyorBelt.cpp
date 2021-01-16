@@ -26,7 +26,7 @@ Wrap *PapaXmasConveyorBelt::IN()
         std::cerr << "Something is already on the ConveyorBelt." << std::endl;
         return nullptr;
     }
-    _wrap = new Wrap();
+    _wrap = new Wrap("ReadyGift", "");
     return (_wrap);
 }
 
@@ -51,8 +51,12 @@ bool PapaXmasConveyorBelt::lookatTable()
 
 bool PapaXmasConveyorBelt::putObject(Object *object)
 {
+    Box *box = new Box("Box", "");
     if (lookatTable() == false) {
-        _wrap->wrapMeThat(object);
+        box->openMe();
+        box->wrapMeThat(object);
+        box->closeMe();
+        _wrap->wrapMeThat(box);
         return (true);
     }
     return (false);
