@@ -14,14 +14,16 @@
 class Object
 {
     public:
-        Object(const std::string &name, const std::string &type);
         virtual ~Object();
-        std::string getName();
-        std::string getType();
+        std::string getName() const;
+        std::string getType() const;
+        std::string getAttribut() const;
 
     protected:
+        Object(const std::string &name, const std::string &type, const std::string& attribut);
         std::string _name;
         std::string _type;
+        std::string _attribut;
 };
 
 std::ostream &operator<<(std::ostream &s, Object object);

@@ -25,13 +25,13 @@ PapaXmasElf::~PapaXmasElf()
 
 bool PapaXmasElf::wrapObject(Wrap *wrap)
 {
-    speach::disp("tuuuut tuuut tuut");
     if (!wrap)
         return (speach::error(SP_WRAP_NOEXIST), false);
     if (!m_object)
         return (speach::error(SP_ELF_HAD_NOT_OBJ(m_name)), false);
     if (!wrap->wrapMeThat(m_object))
         return (false);
+    speach::disp(SP_ELF_WRAP);
     m_object = nullptr;
     return (true);
 }
@@ -42,7 +42,7 @@ bool PapaXmasElf::openWrap(Wrap *wrap)
         return (speach::error(SP_ELF_HAD_OBJ(m_name)), false);
     if (!wrap)
         return (speach::error(SP_WRAP_NOEXIST), false);
-    speach::disp("");
+    speach::disp(SP_ELF_OPEN(m_name, wrap->getName()));
     m_object = wrap->openMe();
     return (true);
 }
@@ -51,6 +51,7 @@ bool PapaXmasElf::closeWrap(Wrap *wrap)
 {
     if (!wrap)
         return (speach::error(SP_WRAP_NOEXIST), false);
+    speach::disp(SP_ELF_CLOSE(m_name, wrap->getName()));
     wrap->closeMe();
     return (true);
 }
@@ -64,6 +65,10 @@ bool PapaXmasElf::takeOnTable(int index)
     if (index < 0 || index > 10)
         return (speach::error(SP_WRONG_INDEX), false);
     m_object = m_table->takeObject(index);
+    if (m_object)
+        speach::disp(SP_ELF_TAKE(m_name, m_object->getName()));
+    if (m_object->getAttribut() == "Wrap")
+        speach::disp(SP_ELF_TAKE_WRAP);
     return (true);
 
 }
@@ -74,8 +79,9 @@ bool PapaXmasElf::takeOnConveyor()
         return (speach::error(SP_ELF_HAD_OBJ(m_name)), false);
     if (!m_conveyor)
         return (speach::error(SP_ELF_HAD_NOT_CONVOYER(m_name)), false);
-    speach::disp("whistles while working");
     m_object = m_conveyor->takeObject();
+    if (m_object)
+        speach::disp(SP_ELF_TAKE_WRAP);
     return (true);
 }
 
@@ -87,6 +93,7 @@ bool PapaXmasElf::putOnTable()
         return (speach::error(SP_ELF_HAD_NOT_OBJ(m_name)), false);
     if (!m_table->putObject(m_object))
         return (false);
+    speach::disp(SP_ELF_PUT_TABLE(m_name, m_object->getName()));
     m_object = nullptr;
     return (true);
 }
@@ -100,6 +107,7 @@ bool PapaXmasElf::putOnConveyor()
     std::cout << "whistles while working" << std::endl;
     if (!m_conveyor->putObject(m_object))
         return (false);
+    speach::disp(SP_ELF_PUT_CONVOYER(m_name, m_object->getName()));
     m_object = nullptr;
     return (true);
 }
@@ -108,6 +116,7 @@ bool PapaXmasElf::pressInButton()
 {
     if (!m_conveyor)
         return (speach::error(SP_ELF_HAD_NOT_CONVOYER(m_name)), false);
+    speach::disp(SP_ELF_PRESS_IN(m_name));
     return (m_conveyor->IN());
 }
 
@@ -115,6 +124,7 @@ bool PapaXmasElf::pressOutButton()
 {
     if (!m_conveyor)
         return (speach::error(SP_ELF_HAD_NOT_CONVOYER(m_name)), false);
+    speach::disp(SP_ELF_PRESS_OUT(m_name));
     return (m_conveyor->OUT());
 }
 
@@ -128,11 +138,20 @@ const std::string* PapaXmasElf::lookAtTable()
 void PapaXmasElf::assignTable(PapaXmasTable* table)
 {
     m_table = table;
+    if (m_table)
+        speach::disp(SP_ELF_NEW_TABLE(m_name));
+    else
+        speach::disp(SP_ELF_LOST_TABLE(m_name));
+
 }
 
 void PapaXmasElf::assignConveyor(PapaXmasConveyorBelt *conveyor)
 {
     m_conveyor = conveyor;
+    if (m_table)
+        speach::disp(SP_ELF_NEW_CONVOYER(m_name));
+    else
+        speach::disp(SP_ELF_LOST_CONVOYER(m_name));
 }
 
 void PapaXmasElf::dispObject() const
