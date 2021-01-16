@@ -18,7 +18,9 @@ class IConveyorBelt
     public:
         virtual ~IConveyorBelt();
         virtual Wrap *IN() = 0;
-        virtual bool OUT(Object *obj) = 0;
+        virtual bool OUT() = 0;
+        virtual bool putObject(Object *object) = 0;
+        virtual Object *takeObject(int position) = 0;
         virtual bool lookatTable() = 0;
 };
 
@@ -27,9 +29,12 @@ class PapaXmasConveyorBelt : public IConveyorBelt
     public:
         PapaXmasConveyorBelt();
         ~PapaXmasConveyorBelt();
+
         Wrap *IN();
-        bool OUT(Object *object);
-        bool lookatTable();
+        bool OUT();
+        bool putObject(Object *object) override;
+        Object *takeObject(int position) override;
+        bool lookatTable() override;
 
     protected:
         Wrap *_wrap;

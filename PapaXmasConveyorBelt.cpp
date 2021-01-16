@@ -22,15 +22,15 @@ PapaXmasConveyorBelt::~PapaXmasConveyorBelt()
 
 Wrap *PapaXmasConveyorBelt::IN()
 {
-    if (!_wrap) {
+    if (_wrap) {
         std::cerr << "Something is already on the ConveyorBelt." << std::endl;
         return nullptr;
     }
-    _wrap = new GiftPaper();
+    _wrap = new Wrap();
     return (_wrap);
 }
 
-bool PapaXmasConveyorBelt::OUT(Object *obj)
+bool PapaXmasConveyorBelt::OUT()
 {
     if (!_wrap) {
         std::cerr << "Nothing is on the ConveyorBelt for sending it to Santa." << std::endl;
@@ -51,4 +51,12 @@ bool PapaXmasConveyorBelt::lookatTable()
 IConveyorBelt *createConveyorBelt()
 {
   return (new PapaXmasConveyorBelt);
+}
+
+bool PapaXmasConveyorBelt::putObject(Object *object)
+{
+}
+
+Object* PapaXmasConveyorBelt::takeObject(int position)
+{
 }
