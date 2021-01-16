@@ -20,7 +20,7 @@ class IConveyorBelt
         virtual Wrap *IN() = 0;
         virtual bool OUT() = 0;
         virtual bool putObject(Object *object) = 0;
-        virtual Object *takeObject(int position) = 0;
+        virtual Object *takeObject() = 0;
         virtual bool lookatTable() = 0;
 };
 
@@ -33,7 +33,7 @@ class PapaXmasConveyorBelt : public IConveyorBelt
         Wrap *IN();
         bool OUT();
         bool putObject(Object *object) override;
-        Object *takeObject(int position) override;
+        Object *takeObject() override;
         bool lookatTable() override;
 
     protected:

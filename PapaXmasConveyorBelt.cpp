@@ -43,20 +43,27 @@ bool PapaXmasConveyorBelt::OUT()
 
 bool PapaXmasConveyorBelt::lookatTable()
 {
-  if (!_wrap)
-    return false;
-  return true;
+    if (!_wrap)
+        return false;
+    return true;
+}
+
+
+bool PapaXmasConveyorBelt::putObject(Object *object)
+{
+    if (lookatTable() == false) {
+        _wrap->wrapMeThat(object);
+        return (true);
+    }
+    return (false);
+}
+
+Object *PapaXmasConveyorBelt::takeObject()
+{
+    return (_wrap->accessGift());
 }
 
 IConveyorBelt *createConveyorBelt()
 {
-  return (new PapaXmasConveyorBelt);
-}
-
-bool PapaXmasConveyorBelt::putObject(Object *object)
-{
-}
-
-Object* PapaXmasConveyorBelt::takeObject(int position)
-{
+    return (new PapaXmasConveyorBelt);
 }
