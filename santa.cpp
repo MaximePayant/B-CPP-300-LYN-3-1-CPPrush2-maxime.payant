@@ -63,7 +63,7 @@ int main(int ac, char **av)
     if (ac < 2)
         return 84;
     gifts = getGiftFromXml(ac, av);
-    for (int i = 0; i < gifts.size(); i++)
+    for (size_t i = 0; i < gifts.size(); i++)
         std::cout << ((Wrap *)((Wrap *)((Wrap *)gifts[i])->accessGift())->accessGift())->getType() << " " << ((Wrap *)((Wrap *)((Wrap *)gifts[i])->accessGift())->accessGift())->getName() << std::endl;
     return 0;
 }
