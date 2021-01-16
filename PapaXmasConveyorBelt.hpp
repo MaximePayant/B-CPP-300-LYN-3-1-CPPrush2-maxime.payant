@@ -8,10 +8,12 @@
 #ifndef PAPAXMASCONVEYORBELT_H
 #define PAPAXMASCONVEYORBELT_H
 
+#include <iostream>
+
 #include "Object.hpp"
 #include "Wrap.hpp"
 #include "GiftPaper.hpp"
-#include <iostream>
+#include "Box.hpp"
 
 class IConveyorBelt
 {
