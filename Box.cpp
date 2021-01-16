@@ -7,7 +7,7 @@
 
 #include "Box.hpp"
 
-Box::Box(const std::string &name, const std::string &type) : Object("Wrap", "Box")
+Box::Box(const std::string &name, const std::string &type) : Wrap("Wrap", "Box")
 {
     this->_name = name;
     this->_type = type;
