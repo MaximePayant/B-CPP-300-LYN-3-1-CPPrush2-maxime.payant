@@ -12,6 +12,10 @@
 #include "Object.hpp"
 #include <iostream>
 
+/*
+** Ungly func that tests all my functions respecting the pdf prototype
+** Wrapping a gift. It helped me.
+*/
 Object *MyUnitTests(Object **arr)
 {
     int size = 0;
