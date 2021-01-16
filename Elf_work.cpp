@@ -67,16 +67,20 @@ static Object *searchGiftPaper(PapaXmasTable *table, PapaXmasConveyorBelt *conve
 void PapaXmasElf::itsTimeToWork()
 {
     while (1) {
-        if (!(m_object[LEFT] = searchToyInTable(m_table)))
+        if (!(m_object[LEFT] = searchToyInTable(m_table))) {
+            speach::disp("There is no more Toy to wrap !");
             return;
+        }
         if (!(m_object[RIGHT] = searchBox(m_table, m_conveyor)))
             while (1) {
                 pressInButton();
                 takeOnConveyor(RIGHT);
                 if (m_object[RIGHT]->getType() == "Box")
                     break;
-                if (!putOnTable(RIGHT))
+                if (!putOnTable(RIGHT)) {
+                    speach::disp("There is no more space on table");
                     return;
+                }
             }
         openWrap(RIGHT);
         wrapObject(LEFT);
@@ -86,8 +90,10 @@ void PapaXmasElf::itsTimeToWork()
                 takeOnConveyor(LEFT);
                 if (m_object[LEFT]->getType() == "GiftPaper")
                     break;
-                if (!putOnTable(LEFT))
+                if (!putOnTable(LEFT)) {
+                    speach::disp("There is no more space on table");
                     return;
+                }
             }
         wrapObject(RIGHT);
         putOnConveyor(LEFT);

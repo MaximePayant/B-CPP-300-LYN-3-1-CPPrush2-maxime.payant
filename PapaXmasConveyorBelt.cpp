@@ -5,6 +5,7 @@
 ** PapaXmasConveyorBelt
 */
 
+#include "speach.hpp"
 #include "PapaXmasConveyorBelt.hpp"
 
 IConveyorBelt::~IConveyorBelt()
@@ -39,10 +40,12 @@ bool PapaXmasConveyorBelt::OUT()
 {
     std::ofstream myfile;
     Box *mybox = (Box *)_wrap->accessGift();
+
     if (!_wrap) {
         std::cerr << "Nothing is on the ConveyorBelt for sending it to Santa." << std::endl;
         return false;
     }
+    speach::disp("Send " + mybox->accessGift()->getName() + " wrapped to Santa ! Thank you for your work !");
     myfile.open("gift.xml");
     if (mybox->accessGift()->getType() == "Teddy")
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
