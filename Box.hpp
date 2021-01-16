@@ -13,7 +13,7 @@ class Box : public Wrap {
     public:
         Box();
         virtual ~Box();
-        void wrapMeThat(Object *gift);
+        void wrapMeThat(Object *gift) override;
 
     protected:
 
