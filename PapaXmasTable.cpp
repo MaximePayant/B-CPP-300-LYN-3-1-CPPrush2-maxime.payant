@@ -55,7 +55,8 @@ const std::string *PapaXmasTable::lookatTable()
         if (_table[i]) {
             tab[j] = _table[i]->getName();
             j++;
-        }
+        } else
+            tab[j] = "";
     if (j == 0) {
         std::cerr << "Table is empty." << std::endl;
         return nullptr;
@@ -68,6 +69,7 @@ const std::string *PapaXmasTable::lookatTable()
 ITable *createTable()
 {
     ITable *tab = new PapaXmasTable;
-    tab->putObject(nullptr);
+    for (int i = 0; i < 10; i++)
+        tab->putObject(nullptr);
     return (tab);
 }

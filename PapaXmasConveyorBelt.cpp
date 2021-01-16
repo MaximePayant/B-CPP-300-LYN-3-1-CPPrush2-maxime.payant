@@ -22,11 +22,16 @@ PapaXmasConveyorBelt::~PapaXmasConveyorBelt()
 
 Wrap *PapaXmasConveyorBelt::IN()
 {
+    int i = 0;
     if (_wrap) {
         std::cerr << "Something is already on the ConveyorBelt." << std::endl;
         return nullptr;
     }
-    _wrap = new Wrap("ReadyGift", "");
+    i = rand() % 2;
+    if (i == 0)
+        _wrap = new GiftPaper("MyGIFTPAPER", "GiftPaper");
+    else
+        _wrap = new Box("MyBOX", "Box");
     return (_wrap);
 }
 
