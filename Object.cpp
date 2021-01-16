@@ -16,3 +16,19 @@ Object::Object(const std::string &name, const std::string &type)
 Object::~Object()
 {
 }
+
+std::string Object::getName()
+{
+    return (_name);
+}
+
+std::string Object::getType()
+{
+    return (_type);
+}
+
+std::ostream &operator<<(std::ostream &s, Object object)
+{
+    s << "This object is a " << object.getName() << " and his type is " << object.getType() << std::endl;
+    return (s);
+}
