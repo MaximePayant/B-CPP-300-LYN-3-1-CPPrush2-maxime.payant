@@ -14,3 +14,8 @@ Teddy::Teddy()
 Teddy::~Teddy()
 {
 }
+
+void Teddy::isTaken()
+{
+    std::cout << "gra hu" << std::endl;
+}

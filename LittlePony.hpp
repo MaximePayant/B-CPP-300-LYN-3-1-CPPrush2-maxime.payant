@@ -9,11 +9,11 @@
 #define LITTLEPONEY_HPP_
 #include "Toy.hpp"
 
-class LittlePoney : public Toy {
+class LittlePony : public Toy {
     public:
-        LittlePoney();
-        ~LittlePoney();
-
+        LittlePony();
+        ~LittlePony();
+        void isTaken();
     protected:
     private:
 };
