@@ -12,7 +12,6 @@ ITable::~ITable() {}
 PapaXmasTable::PapaXmasTable()
 {
     for (int i = 0; i < 10; i++) {
-//	_table[i] = new Object("", "", "");
         _table[i] = nullptr;
     }
 }
