@@ -47,9 +47,9 @@ bool PapaXmasConveyorBelt::OUT()
     if (mybox->accessGift()->getType() == "Teddy")
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
 << "Maugan" << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
-    else if (mybox->accessGift()->getType() == "LittlePony") {
+    else if (mybox->accessGift()->getType() == "Little Pony") {
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<LittlePony>"
-<< "Maximel" << "</LittlePony>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
+<< mybox->accessGift()->getName() << "</LittlePony>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
     }
     myfile.close();
     delete _wrap;
