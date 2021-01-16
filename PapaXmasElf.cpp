@@ -136,11 +136,14 @@ void PapaXmasElf::assignConveyor(PapaXmasConveyorBelt *conveyor)
 
 void PapaXmasElf::dispObject() const
 {
-    std::cout
-        << m_name
-        << " is carrying a "
-        << m_object->getType()
-        << " named "
-        << m_object->getName()
-        << std::endl;
+    if (!m_object)
+        std::cout << m_name << " not carrying an object" << std::endl;
+    else
+        std::cout
+            << m_name
+            << " is carrying a "
+            << m_object->getType()
+            << " named "
+            << m_object->getName()
+            << std::endl;
 }
