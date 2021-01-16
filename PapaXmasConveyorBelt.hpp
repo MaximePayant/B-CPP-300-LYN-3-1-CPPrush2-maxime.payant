@@ -9,7 +9,7 @@
 #define PAPAXMASCONVEYORBELT_H
 
 #include <iostream>
-
+#include <fstream>
 #include "Object.hpp"
 #include "Wrap.hpp"
 #include "GiftPaper.hpp"
