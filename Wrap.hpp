@@ -17,6 +17,7 @@ class Wrap {
         Object *openMe();
         void closeMe();
         bool isOpen() const;
+        Object *accessGift() const;
 
     protected:
         bool _is_open;

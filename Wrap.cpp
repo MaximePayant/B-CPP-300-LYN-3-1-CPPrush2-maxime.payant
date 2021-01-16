@@ -38,6 +38,11 @@ Object *Wrap::openMe()
     return (tmp);
 }
 
+Object *Wrap::accessGift() const
+{
+    return this->_gift;
+}
+
 void Wrap::closeMe()
 {
     this->_is_open = false;
