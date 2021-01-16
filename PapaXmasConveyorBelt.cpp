@@ -29,7 +29,7 @@ Wrap *PapaXmasConveyorBelt::IN()
     }
     i = rand() % 2;
     if (i == 0)
-        _wrap = new GiftPaper("MyGIFTPAPER", "GiftPaper");
+        _wrap = new GiftPaper("MyGIFTPAPER");
     else
         _wrap = new Box("MyBOX");
     return (_wrap);
