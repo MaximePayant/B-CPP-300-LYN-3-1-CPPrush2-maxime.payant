@@ -14,7 +14,7 @@ class Wrap {
         Wrap();
         virtual ~Wrap();
         virtual void wrapMeThat(Object *gift);
-        void openMe();
+        Object *openMe();
         void closeMe();
         bool isOpen() const;
 
