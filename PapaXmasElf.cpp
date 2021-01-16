@@ -12,6 +12,7 @@ PapaXmasElf::PapaXmasElf()
 
 Object* IElf::takeObject(Object *obj)
 {
+
 }
 
 void IElf::wrapObject(Wrap *wrap, Object *obj)

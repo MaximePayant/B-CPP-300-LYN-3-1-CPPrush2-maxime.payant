@@ -28,7 +28,7 @@ void Wrap::wrapMeThat(Object *gift)
     this->_is_gift = true;
 }
 
-void Wrap::openMe() const
+void Wrap::openMe()
 {
     this->_is_open = true;
 }

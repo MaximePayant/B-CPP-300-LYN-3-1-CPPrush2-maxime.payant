@@ -17,6 +17,8 @@ class PapaXmasElf :
 {
 
     private:
+        Table *m_table;
+        ConveyorBelt *m_conveyor;
 
     public:
         PapaXmasElf();
