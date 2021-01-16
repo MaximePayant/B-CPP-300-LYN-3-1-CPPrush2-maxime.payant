@@ -34,11 +34,11 @@ Object *MyUnitTests(Object **arr)
         std::cerr << "arr[2] Not a GiftPaper" << std::endl;
         return nullptr;
     }
+    ((Wrap *)arr[1])->openMe();
     if (((Wrap *)arr[1])->isOpen() == false)
         std::cerr << "Box closed" << std::endl;
     else
         std::cerr << "Box Opened" << std::endl;
-    ((Wrap *)arr[1])->openMe();
     ((Wrap *)arr[1])->wrapMeThat(arr[0]);
     if (((Wrap *)arr[1])->isOpen() == false)
         std::cerr << "Box closed" << std::endl;
