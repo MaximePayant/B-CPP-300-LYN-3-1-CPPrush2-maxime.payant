@@ -24,12 +24,14 @@ std::string extraction(char const *file, std::string &name)
 {
     std::ifstream current (file);
     std::string line;
+    std::string buff;
     std::string type = "";
-    std::regex rgx("^<(Gift)><(\\1Paper)><(Box)><(Teddy|LittlePony)>(.*)</\\4></\\3></\\2></\\1>$");
+    std::regex rgx("^[\t ]*<(Gift)>[\t ]*<(\\1Paper)>[\t ]*<(Box)>[\t ]*<(Teddy|LittlePony)>[\t ]*(.*)[\t ]*</\\4>[\t ]*</\\3>[\t ]*</\\2>[\t ]*</\\1>[\t ]*$");
     std::smatch match;
 
-    std::getline(current, line);
-    std::regex_search(line, match, rgx);
+    while (std::getline(current, line))
+        buff += line;
+    std::regex_search(buff, match, rgx);
     current.close();
     if (match.size() > 0) {
         type = match[4];
