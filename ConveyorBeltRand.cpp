@@ -20,7 +20,7 @@ ConveyorBeltRand::ConveyorBeltRand(std::string filename) : PapaXmasConveyorBelt(
     int r = rand() % 2;
     std::ofstream myfile;
     myrand(r);
-    myfile.open(filename);
+    myfile.open(filename, std::ofstream::out | std::ofstream::app);
     if (r == 0)
         myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
 << "Maugan" << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
