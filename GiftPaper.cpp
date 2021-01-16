@@ -10,7 +10,7 @@
 GiftPaper::GiftPaper(const std::string &name) : Wrap(name)
 {
     this->_name = name;
-    this->_gift = "GiftPaper";
+    this->_type = "GiftPaper";
 }
 
 GiftPaper::~GiftPaper()
