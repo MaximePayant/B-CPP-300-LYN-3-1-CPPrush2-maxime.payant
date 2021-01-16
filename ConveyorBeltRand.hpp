@@ -19,9 +19,30 @@
 class ConveyorBeltRand : public PapaXmasConveyorBelt
 {
     public:
-        ConveyorBeltRand(std::string filename);
-        ~ConveyorBeltRand();
-        void myrand(int r);
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Create a Wrap at random with a file .xml for Santa
+    ///
+    /// @param Name of the file for Santa
+    /// @p @warning Nothing to say
+    //
+    ConveyorBeltRand(std::string filename);
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Destruct the Wrap *
+    ///
+    /// @p @warning Nothing to say
+    //
+    virtual ~ConveyorBeltRand();
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Do my random
+    ///
+    /// @param A int for my random
+    /// @p @warning Nothing to say
+    /// @return Nothing
+    //
+    void myrand(int r);
 };
 
 #endif /* CONVEYORBELTRAND_H */

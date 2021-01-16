@@ -22,6 +22,9 @@ Wrap::~Wrap()
     delete this->_gift;
 }
 
+/*
+** Wraps gifts
+*/
 bool Wrap::wrapMeThat(Object *gift)
 {
     if (this->_is_gift != false)
@@ -32,6 +35,9 @@ bool Wrap::wrapMeThat(Object *gift)
     return (true);
 }
 
+/*
+** Opens gifts and return
+*/
 Object *Wrap::openMe()
 {
     Object *tmp = this->_gift;
@@ -42,6 +48,9 @@ Object *Wrap::openMe()
     return (tmp);
 }
 
+/*
+** Gets access to gift for debugging purposes
+*/
 Object *Wrap::accessGift() const
 {
     if (!_gift)
@@ -49,11 +58,17 @@ Object *Wrap::accessGift() const
     return this->_gift;
 }
 
+/*
+** Closes Wrap
+*/
 void Wrap::closeMe()
 {
     this->_is_open = false;
 }
 
+/*
+** Checks if the Wrap is open
+*/
 bool Wrap::isOpen() const
 {
     return this->_is_open;

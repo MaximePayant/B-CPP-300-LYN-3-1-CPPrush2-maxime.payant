@@ -15,6 +15,10 @@ Box::~Box()
 {
 }
 
+/*
+** Function that overwrite the Wrap.cpp WrapMeThat and adds doing nothing
+** if the box is closed
+*/
 bool Box::wrapMeThat(Object *gift)
 {
     if (this->_is_open == false || this->_is_gift != false)

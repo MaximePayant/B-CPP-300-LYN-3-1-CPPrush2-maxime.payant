@@ -17,9 +17,30 @@
 class TableRand : public PapaXmasTable
 {
     public:
-        TableRand();
-        virtual ~TableRand();
-        void myrand(int i, int r);
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Create a Table with random elements
+    ///
+    /// @p @warning Nothing to say
+    //
+    TableRand();
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Destruct a Table of Object *
+    ///
+    /// @p @warning Nothing to say
+    //
+    virtual ~TableRand();
+
+    ///////////////////////////////////////////////////////////////////////
+    /// @brief Do my random
+    ///
+    /// @param A int for the position in table for the new element
+    /// @param A int for my random
+    /// @p @warning Nothing to say
+    /// @return Nothing
+    //
+    void myrand(int i, int r);
 };
 
 #endif /* TABLERAND_H */
