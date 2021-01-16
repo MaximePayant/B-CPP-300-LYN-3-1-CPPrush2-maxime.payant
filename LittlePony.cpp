@@ -8,7 +8,7 @@
 #include "LittlePony.hpp"
 #include <iostream>
 
-LittlePony::LittlePony()
+LittlePony::LittlePony(std::string const &name) : Toy(name, "pony")
 {
 }
 
@@ -16,7 +16,7 @@ LittlePony::~LittlePony()
 {
 }
 
-void LittlePony::isTaken()
+void LittlePony::isTaken() const
 {
     std::cout << "yo man" << std::endl;
 }

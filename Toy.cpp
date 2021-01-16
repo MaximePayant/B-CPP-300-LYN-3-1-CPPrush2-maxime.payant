@@ -7,10 +7,20 @@
 
 #include "Toy.hpp"
 
-Toy::Toy()
+Toy::Toy(std::string const &name, std::string const &type) : Object(name, type)
 {
 }
 
 Toy::~Toy()
 {
+}
+
+std::string Toy::getType()
+{
+    return (this->_type);
+}
+
+std::string Toy::getName()
+{
+    return (this->_name);   
 }

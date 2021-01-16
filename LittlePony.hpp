@@ -12,7 +12,7 @@
 class LittlePony : public Toy
 {
     public:
-        LittlePony();
+        LittlePony(std::string const &name);
         ~LittlePony();
 
         void isTaken() const override;

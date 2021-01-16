@@ -12,10 +12,15 @@
 class Toy : public Object
 {
     public:
-        Toy();
+        Toy(std::string const &name, std::string const &type);
         ~Toy();
 
         virtual void isTaken() const = 0;
+        std::string getType();
+        std::string getName();
+    private:
+        std::string _type;
+        std::string _name;
 };
 
 #endif /* !TOY_HPP_ */

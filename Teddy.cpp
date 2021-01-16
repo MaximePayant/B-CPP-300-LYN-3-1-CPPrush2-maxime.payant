@@ -7,7 +7,7 @@
 
 #include "Teddy.hpp"
 
-Teddy::Teddy()
+Teddy::Teddy(std::string const &name) : Toy(name, "Teddy")
 {
 }
 
@@ -15,7 +15,7 @@ Teddy::~Teddy()
 {
 }
 
-void Teddy::isTaken()
+void Teddy::isTaken() const
 {
     std::cout << "gra hu" << std::endl;
 }
