@@ -9,11 +9,13 @@
 #define TOY_HPP_
 #include "Object.hpp"
 
-class Toy : public Object {
+class Toy : public Object
+{
     public:
         Toy();
         ~Toy();
-    protected:
+
+        virtual void isTaken() const = 0;
 };
 
 #endif /* !TOY_HPP_ */

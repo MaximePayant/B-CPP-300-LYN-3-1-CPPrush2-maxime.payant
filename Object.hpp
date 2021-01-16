@@ -8,11 +8,11 @@
 #ifndef OBJECT_HPP_
 #define OBJECT_HPP_
 
-class Object {
+class Object
+{
     public:
         Object();
         ~Object();
-    protected:
 };
 
 #endif /* !OBJECT_HPP_ */

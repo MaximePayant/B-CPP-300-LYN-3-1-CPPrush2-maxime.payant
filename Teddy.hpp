@@ -10,12 +10,13 @@
 #include "Toy.hpp"
 #include <iostream>
 
-class Teddy : Toy {
+class Teddy : public Toy
+{
     public:
         Teddy();
         ~Teddy();
-        void isTaken();
-    protected:
+
+        void isTaken() const override;
 };
 
 #endif /* !TEDDY_HPP_ */

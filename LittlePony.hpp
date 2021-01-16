@@ -9,13 +9,13 @@
 #define LITTLEPONEY_HPP_
 #include "Toy.hpp"
 
-class LittlePony : public Toy {
+class LittlePony : public Toy
+{
     public:
         LittlePony();
         ~LittlePony();
-        void isTaken();
-    protected:
-    private:
+
+        void isTaken() const override;
 };
 
 #endif /* !LITTLEPONEY_HPP_ */
