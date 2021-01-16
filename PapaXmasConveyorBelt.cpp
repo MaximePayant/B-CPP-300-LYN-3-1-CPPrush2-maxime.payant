@@ -37,10 +37,21 @@ Wrap *PapaXmasConveyorBelt::IN()
 
 bool PapaXmasConveyorBelt::OUT()
 {
+    std::ofstream myfile;
+    Box *mybox = (Box *)_wrap->accessGift();
     if (!_wrap) {
         std::cerr << "Nothing is on the ConveyorBelt for sending it to Santa." << std::endl;
         return false;
     }
+    myfile.open("gift.xml");
+    if (mybox->accessGift()->getType() == "Teddy")
+        myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<Teddy>"
+<< "Maugan" << "</Teddy>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
+    else if (mybox->accessGift()->getType() == "LittlePony") {
+        myfile << "<Gift>\n    <GiftPaper>\n        <Box>\n            " << "<LittlePony>"
+<< "Maximel" << "</LittlePony>" << "\n        </Box>\n    </GiftPaper>\n</Gift>";
+    }
+    myfile.close();
     delete _wrap;
     _wrap = nullptr;
     return true;
