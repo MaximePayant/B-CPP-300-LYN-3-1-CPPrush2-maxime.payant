@@ -8,11 +8,10 @@
 #ifndef IELF_HPP
 #define IELF_HPP
 
-class Wrap;
-class Object;
-class Box;
-class Table;
-class ConveyorBelt;
+#include "PapaXmasConveyorBelt.hpp"
+#include "PapaXmasTable.hpp"
+#include "Object.hpp"
+#include "Wrap.hpp"
 
 #include <vector>
 #include <string>
@@ -22,19 +21,20 @@ class IElf
 
     public:
         virtual ~IElf() {};
-        virtual Object *takeObject(Object *obj) = 0;                // Call obj.isTaken()
-        virtual void wrapObject(Wrap *wrap, Object *obj) = 0;       // Call wrap.wrapMeThat()   // say "tuuuut tuuut tuut"
-        virtual void takeWrap(Wrap *wrap) = 0;                      // Call obj.isTaken()       // say "whistles while working"
-        virtual void putObject(Wrap *wrap, Object *obj) = 0;        //
-        virtual void openBox(Wrap *wrap) = 0;                       // Call wrap.openMe
-        virtual void closeBox(Wrap *wrap) = 0;                      // Call wrap.closeMe
-        virtual Object *takeOnTable(Table *table) = 0;              //
-        virtual Object *takeOnConveyor(ConveyorBelt *conveyor) = 0;             //
-        virtual Object *putOnTable(ConveyorBelt *conveyor, Object *obj) = 0;    //
-        virtual Object *putOnConveyor(ConveyorBelt *conveyor, Object *obj) = 0; //
-        virtual void pressInButton(ConveyorBelt *conveyor) = 0;                 //
-        virtual void pressOutButton(ConveyorBelt *conveyor) = 0;                //
-        virtual std::vector<std::string> lookAtTable(Table *table) = 0;         //
+        virtual Object *takeObject(Object *obj) = 0;
+
+        virtual bool wrapObject(Wrap *wrap, Object *obj) = 0;
+        virtual Object *openWrap(Wrap *wrap) = 0;
+        virtual bool closeWrap(Wrap *wrap) = 0;
+        virtual Object *takeOnTable(int index) = 0;
+        virtual Object *takeOnConveyor() = 0;
+        virtual bool putOnTable(Object *obj) = 0;
+        virtual bool putOnConveyor(Object *obj) = 0;
+        virtual bool pressInButton() = 0;
+        virtual bool pressOutButton() = 0;
+        virtual const std::string *lookAtTable() = 0;
+        virtual const void assignTable(PapaXmasTable* table) = 0;
+        virtual const void assignConveyor(PapaXmasConveyorBelt *conveyor) = 0;
 
 };
 

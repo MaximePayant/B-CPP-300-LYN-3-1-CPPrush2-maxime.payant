@@ -20,12 +20,13 @@ Wrap::~Wrap()
     delete this->_gift;
 }
 
-void Wrap::wrapMeThat(Object *gift)
+bool Wrap::wrapMeThat(Object *gift)
 {
     if (this->_is_gift != false)
-        return;
+        return (false);
     this->_gift = gift;
     this->_is_gift = true;
+    return (true);
 }
 
 Object *Wrap::openMe()
@@ -40,6 +41,8 @@ Object *Wrap::openMe()
 
 Object *Wrap::accessGift() const
 {
+    if (!_gift)
+        return (nullptr);
     return this->_gift;
 }
 

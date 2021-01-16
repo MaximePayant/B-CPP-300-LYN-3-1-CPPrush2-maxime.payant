@@ -11,7 +11,7 @@
 #include "Object.hpp"
 #include <iostream>
 
-class ITable 
+class ITable
 {
     public:
         virtual ~ITable();

@@ -13,7 +13,7 @@ class Wrap {
     public:
         Wrap();
         virtual ~Wrap();
-        virtual void wrapMeThat(Object *gift);
+        virtual bool wrapMeThat(Object *gift);
         Object *openMe();
         void closeMe();
         bool isOpen() const;
