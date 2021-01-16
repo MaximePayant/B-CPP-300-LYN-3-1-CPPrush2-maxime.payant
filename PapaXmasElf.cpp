@@ -131,6 +131,8 @@ bool PapaXmasElf::putOnConveyor(Hand hand)
     if (!m_object[hand])
         return (speach::error(SP_ELF_HAD_NOT_OBJ(m_name)), false);
 
+    if (m_object[hand]->getAttribut() != "Wrap")
+        return (speach::error("Can't put a Toy in the coveyor"), false);
     if (!m_conveyor->putObject(m_object[hand]))
         return (false);
     speach::disp(SP_ELF_PUT_CONVOYER(m_name, m_object[hand]->getName()));
@@ -168,7 +170,6 @@ void PapaXmasElf::assignTable(PapaXmasTable* table)
         speach::disp(SP_ELF_NEW_TABLE(m_name));
     else
         speach::disp(SP_ELF_LOST_TABLE(m_name));
-
 }
 
 void PapaXmasElf::assignConveyor(PapaXmasConveyorBelt *conveyor)

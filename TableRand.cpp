@@ -13,17 +13,13 @@ void TableRand::myrand(int i, int r)
         _table[i] = new Teddy("Teddy");
     else if (r == 1)
         _table[i] = new LittlePony("LittlePony");
-    else if (r == 2)
-        _table[i] = new Box("MyBOX");
-    else
-        _table[i] = new GiftPaper("MyGiftPaper");
 }
 
 TableRand::TableRand()
 {
     int r = 0;
     for (size_t i = 0; i < 10; i++) {
-        r = rand() % 4;
+        r = rand() % 2;
         myrand(i, r);
     }
 }

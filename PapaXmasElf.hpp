@@ -14,8 +14,8 @@
 #include "IElf.hpp"
 #include "Object.hpp"
 #include "Wrap.hpp"
-#include "PapaXmasTable.hpp"
-#include "PapaXmasConveyorBelt.hpp"
+#include "TableRand.hpp"
+#include "ConveyorBeltRand.hpp"
 
 class PapaXmasElf :
     public IElf
@@ -139,6 +139,8 @@ class PapaXmasElf :
         /// @param conveyor conveyor to be assign
         //
         void assignConveyor(PapaXmasConveyorBelt *conveyor) override;
+
+        void itsTimeToWork();
 
         void dispObject() const;
 
