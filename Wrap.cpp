@@ -17,6 +17,7 @@ Wrap::Wrap()
 
 Wrap::~Wrap()
 {
+    delete this->_gift;
 }
 
 void Wrap::wrapMeThat(Object *gift)
