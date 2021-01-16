@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2021
+** B-CPP-300-LYN-3-1-CPPrush2-prince.miyigbena
+** File description:
+** asanra
+*/
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -9,6 +16,9 @@
 #include "Toy.hpp"
 #include "Wrap.hpp"
 
+/*
+** Wrapping a gift by putting it into a box and wrapping the giftpaper
+*/
 GiftPaper *create_gift(Toy *toy)
 {
     GiftPaper *gift = new GiftPaper;
@@ -20,6 +30,10 @@ GiftPaper *create_gift(Toy *toy)
     return gift;
 }
 
+/*
+** Parsing a file to verify it is a valid xml defined gift
+** The getline concats everyfile line in a buffer and the regex checks if the content is valid
+*/
 std::string extraction(char const *file, std::string &name)
 {
     std::ifstream current (file);
@@ -40,6 +54,9 @@ std::string extraction(char const *file, std::string &name)
     return type;
 }
 
+/*
+** Iterating over the files to parse them and put them into gifts
+*/
 std::vector<GiftPaper *> getGiftFromXml(int ac, char **av)
 {
     std::vector<GiftPaper *> gifts;
@@ -56,6 +73,9 @@ std::vector<GiftPaper *> getGiftFromXml(int ac, char **av)
     return gifts;
 }
 
+/*
+** Main file with an ugly for the display the gift content for debugging
+*/
 int main(int ac, char **av)
 {
     std::vector<GiftPaper *> gifts;
