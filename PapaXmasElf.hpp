@@ -25,9 +25,10 @@ class PapaXmasElf :
         std::string m_name;
         PapaXmasTable *m_table;
         PapaXmasConveyorBelt *m_conveyor;
-        Object *m_object;
+        Object *m_object[2];
 
     public:
+
         PapaXmasElf() = delete;
         PapaXmasElf(const PapaXmasElf&) = delete;
         PapaXmasElf(PapaXmasElf&&) = delete;
@@ -55,7 +56,7 @@ class PapaXmasElf :
         /// @param wrap The @p Wrap call to wrap the @p Object
         /// @return true if the object was wrap, false otherwise
         //
-        bool wrapObject(Wrap *wrap) override;
+        bool wrapObject(Hand hand) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Open the given @p Wrap and take the object in
@@ -64,7 +65,7 @@ class PapaXmasElf :
         /// @param wrap The @p Wrap to open
         /// @return true if the wrap was open, false otherwise
         //
-        bool openWrap(Wrap *wrap) override;
+        bool openWrap(Hand hand) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Close the given @p Wrap
@@ -73,7 +74,7 @@ class PapaXmasElf :
         /// @param wrap The @p Wrap to close
         /// @return true if the wrap was closed, false otherwise
         //
-        bool closeWrap(Wrap *wrap) override;
+        bool closeWrap(Hand hand) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Take the object at the given index on the elf's table
@@ -81,28 +82,28 @@ class PapaXmasElf :
         /// @param index The index to access
         /// @return true if the object was take, else otherwise
         //
-        bool takeOnTable(int index) override;
+        bool takeOnTable(Hand hand, int index) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Take the object on the elf's conveyor
         ///
         /// @return true if the object was take, else otherwise
         //
-        bool takeOnConveyor() override;
+        bool takeOnConveyor(Hand hand) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Put elf's object on the elf's table
         ///
         /// @return true if the object was put, false otherwise
         //
-        bool putOnTable() override;
+        bool putOnTable(Hand hand) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Put the elf's object on the elf's conveyor
         ///
         /// @return true if the object was put, false otherwise
         //
-        bool putOnConveyor() override;
+        bool putOnConveyor(Hand Hand) override;
 
         ///////////////////////////////////////////////////////////////////////
         /// @brief Put an object on the elf's conveyor
@@ -140,8 +141,6 @@ class PapaXmasElf :
         void assignConveyor(PapaXmasConveyorBelt *conveyor) override;
 
         void dispObject() const;
-
-        friend bool unit_test();
 
 };
 

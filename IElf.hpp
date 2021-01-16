@@ -16,19 +16,21 @@
 #include <vector>
 #include <string>
 
+typedef enum {LEFT, RIGHT} Hand;
+
 class IElf
 {
+    protected:
 
-    public:
         virtual ~IElf() {};
 
-        virtual bool wrapObject(Wrap *wrap) = 0;
-        virtual bool openWrap(Wrap *wrap) = 0;
-        virtual bool closeWrap(Wrap *wrap) = 0;
-        virtual bool takeOnTable(int index) = 0;
-        virtual bool takeOnConveyor() = 0;
-        virtual bool putOnTable() = 0;
-        virtual bool putOnConveyor() = 0;
+        virtual bool wrapObject(Hand hand) = 0;
+        virtual bool openWrap(Hand hand) = 0;
+        virtual bool closeWrap(Hand hand) = 0;
+        virtual bool takeOnTable(Hand hand, int index) = 0;
+        virtual bool takeOnConveyor(Hand hand) = 0;
+        virtual bool putOnTable(Hand hand) = 0;
+        virtual bool putOnConveyor(Hand hand) = 0;
         virtual bool pressInButton() = 0;
         virtual bool pressOutButton() = 0;
         virtual const std::string *lookAtTable() = 0;

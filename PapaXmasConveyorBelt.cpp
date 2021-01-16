@@ -57,6 +57,7 @@ bool PapaXmasConveyorBelt::lookatTable()
 bool PapaXmasConveyorBelt::putObject(Object *object)
 {
     Box *box = new Box("Box");
+
     if (lookatTable() == false) {
         box->openMe();
         box->wrapMeThat(object);
@@ -69,7 +70,7 @@ bool PapaXmasConveyorBelt::putObject(Object *object)
 
 Object *PapaXmasConveyorBelt::takeObject()
 {
-    return (_wrap->accessGift());
+    return (_wrap);
 }
 
 IConveyorBelt *createConveyorBelt()

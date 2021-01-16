@@ -44,6 +44,7 @@ namespace speach
 #define SP_ELF_DESTROY(name) (name + " was fired for inactivity.")
 #define SP_ELF_HAD_OBJ(name) (name + " already hold an object")
 #define SP_ELF_HAD_NOT_OBJ(name) (name + " don't have an object")
+#define SP_ELF_HAD_NOT_WRAP(name) (name + " don't have a wrap")
 #define SP_ELF_HAD_NOT_TABLE(name) (name + " don't have a table")
 #define SP_ELF_HAD_NOT_CONVOYER(name) (name + " don't have a convoyer")
 // =========
