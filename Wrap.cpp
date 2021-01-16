@@ -8,11 +8,13 @@
 #include "Wrap.hpp"
 #include "Object.hpp"
 
-Wrap::Wrap()
+Wrap::Wrap(const std::string &name, const std::string &type) : Object("Wrap", "");
 {
     this->_is_gift = false;
     this->_is_open = false;
     this->_gift = nullptr;
+    this->_name = name;
+    this->_type = type;
 }
 
 Wrap::~Wrap()

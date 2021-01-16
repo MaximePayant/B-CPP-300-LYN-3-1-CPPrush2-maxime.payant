@@ -9,9 +9,9 @@
 #define WRAP_HPP_
 #include "Object.hpp"
 
-class Wrap {
+class Wrap : public Object {
     public:
-        Wrap();
+        Wrap(const std::string &name, const std::string &type);
         virtual ~Wrap();
         virtual void wrapMeThat(Object *gift);
         Object *openMe();
