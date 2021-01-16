@@ -14,3 +14,11 @@ Box::Box()
 Box::~Box()
 {
 }
+
+void Box::wrapMeThat(Object *gift)
+{
+    if (this->_is_open == 0 || this->_is_gift != 0)
+        return;
+    this->_gift = gift;
+    this->_is_gift = 1;
+}

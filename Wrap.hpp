@@ -9,12 +9,19 @@
 #define WRAP_HPP_
 #include "Object.hpp"
 
-class Wrap : public Object {
+class Wrap {
     public:
         Wrap();
-        ~Wrap();
-    protected:
+        virtual ~Wrap();
+        virtual void wrapMeThat(Object *gift);
+        Object *openMe();
+        void closeMe();
+        int isOpen() const;
 
+    protected:
+        int _is_open;
+        int _is_gift;
+        Object *_gift;
 };
 
 #endif /* !WRAP_HPP_ */
