@@ -7,7 +7,8 @@
 
 #include "Teddy.hpp"
 
-Teddy::Teddy(std::string const &name) : Toy(name, "Teddy")
+Teddy::Teddy(std::string const &name) :
+Toy(name, "Teddy")
 {
 }
 

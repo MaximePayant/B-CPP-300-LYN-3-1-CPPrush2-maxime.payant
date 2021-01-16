@@ -8,7 +8,8 @@
 #include "LittlePony.hpp"
 #include <iostream>
 
-LittlePony::LittlePony(std::string const &name) : Toy(name, "pony")
+LittlePony::LittlePony(std::string const &name) :
+Toy(name, "pony")
 {
 }
 

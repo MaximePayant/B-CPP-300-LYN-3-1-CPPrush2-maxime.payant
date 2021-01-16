@@ -19,7 +19,7 @@ class Wrap : public Object {
         Object *accessGift() const;
 
     protected:
-        Wrap(const std::string &name = "");
+        Wrap(const std::string &name, const std::string& type);
         bool _is_open;
         bool _is_gift;
         Object *_gift;

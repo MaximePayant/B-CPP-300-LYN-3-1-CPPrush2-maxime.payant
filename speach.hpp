@@ -25,6 +25,12 @@ namespace speach
 
 #define SP_ELF_CREATE(name) (name + " arrived in Santa Factory!")
 #define SP_ELF_DESTROY(name) (name + " was fired for inactivity.")
+#define SP_ELF_HAD_OBJ(name) (name + " already hold an object")
+#define SP_ELF_HAD_NOT_OBJ(name) (name + " don't have an object")
+#define SP_ELF_HAD_NOT_TABLE(name) (name + " don't have a table")
+#define SP_ELF_HAD_NOT_CONVOYER(name) (name + " don't have a convoyer")
+
+
 #define SP_WRAP_NOEXIST ("The given wrap doesn't exist.")
 #define SP_OBJ_NOEXIST ("The given object doesn't exist.")
 #define SP_TABLE_NOEXIST ("The given table doesn't exist")
